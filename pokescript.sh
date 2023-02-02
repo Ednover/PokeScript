@@ -10,4 +10,9 @@ order=$(curl "$url" | jq .order)
 
 clear
 
-echo "id=$id, name=$name, weight=$weight, height=$height, order=$order"
+if [ -z "$id" ]
+then 
+	echo "Pokemon Not Found"
+else
+	echo "id=$id, name=$name, weight=$weight, height=$height, order=$order"
+fi
